@@ -1,8 +1,10 @@
 # sqlctx
 
-`sqlctx` or (SQLContext) is a tool for generating LLM context from database tables. It is targeted at data professionals as a force multiplier, codifying the process of providing table schema to LLMs inside of AI-enabled code editors.
+`sqlctx` or (SQLContext) is a tool for generating LLM context from database tables. It is targeted at data practioners as a force multiplier, codifying the process of providing table schema to LLMs inside of AI-enabled code editors.
 
-Rather than existing as an editor extension, SQLContext outputs context about your database to a directory (`./sqlctx`) such that you can include them with any LLM-enabled editor by mentioning the file for that database table.
+Rather than existing as an editor extension, SQLContext outputs context about your database to a directory (`./sqlctx/{schema_name}/{database_name}/{table_name}.yml`) on a per table basis so that you can include them with any LLM-enabled editor by mentioning the file for that database table. Alternatively, there's a `combined.yml` file that includes output from all the columns from all the tables for long-context LLMs.
+
+Inside each yml file is metadata like the table, database, & schema names, as well as sample values for each column. If you have set column or table comments using tools like DBT or SQLMesh, they will also be extracted.
 
 SQLContext pairs well with:
 
@@ -25,7 +27,7 @@ Start by installing either `uv` or `pipx` to run python CLIs without installing 
 
 SQLContext can be run on demand or configured. To configure for a given directory, run the following to generate a config file. You will need your database connection information handy.
 
-```uvx sqlctx add```
+`uvx sqlctx add` or if you're using pipx `pipx sqlctx add`
 
 A config file will be written to `.sqlctx/config.toml`. You can embed environment variables directly in the toml like `${ENV_VAR}` and they will be replaced if the variable has been set.
 

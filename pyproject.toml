@@ -1,0 +1,20 @@
+[project]
+name = "sqlctx"
+version = "0.1.1"
+description = "A tool for generating LLM context from database tables"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb",
+    "pandas",
+    "pyyaml",
+    "psycopg2-binary",
+    "mysql-connector-python",
+    "fastmcp",
+    "uvicorn",
+    "toml>=0.10.2",
+    "click>=8.1.8",
+]
+
+[project.scripts]
+sqlctx = "cli_commands:cli"

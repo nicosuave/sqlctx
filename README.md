@@ -19,7 +19,7 @@ Start by installing either `uv` or `pipx` to run python CLIs without installing 
 
 SQLContext can be run on demand or configured. To configure for a given directory, run the following to generate a config file. You will need your database connection information handy.
 
-```uvx sqlctx init```
+```uvx sqlctx add```
 
 A config file will be written to `.sqlctx/config.toml`. You can embed environment variables directly in the toml like `${ENV_VAR}` and they will be replaced if the variable has been set.
 

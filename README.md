@@ -11,6 +11,12 @@ SQLContext pairs well with:
 - Zed
 - Windsurf
 
+SQLContext supports databases that use the following protocols:
+
+- DuckDB
+- Postgres
+- MySQL
+
 ## Getting Started
 
 Start by installing either `uv` or `pipx` to run python CLIs without installing to system packages.
@@ -25,7 +31,9 @@ A config file will be written to `.sqlctx/config.toml`. You can embed environmen
 
 ## Generating Context
 
-You can generate context with the `uvx sqlctx generate` command. It will be written to the relative directory `./sqlctx`. It is recommended that you check this directory into your repository and _not_ gitignore, since your editor likely does not treat gitignored files the same as regular project files.
+You can generate context with the `uvx sqlctx generate` command. It will be written to the relative directory `./sqlctx`.
+
+It is recommended that you check this directory into your repository and _not_ gitignore, since your editor likely does not treat gitignored files the same as regular project files, and this will break the expected editor workflow.
 
 ## Consuming Context
 

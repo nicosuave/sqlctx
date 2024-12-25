@@ -5,6 +5,8 @@ import mysql.connector
 import pandas as pd
 import yaml
 import duckdb
+import os
+from db_utils import connect_to_database, load_config
 
 # Initialize the FastMCP instance as a global variable
 mcp = FastMCP("Database Explorer")
@@ -44,9 +46,6 @@ def init_mcp_server(con, combined_yml_path, start=True):
 
     if start:
         mcp.run()
-
-import os
-from db_utils import connect_to_database, load_config, get_database_structure, write_context_files
 
 def setup_and_run_mcp_server(connection=None):
     con, connection_name = connect_to_database(connection)

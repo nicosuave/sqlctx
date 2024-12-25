@@ -1,6 +1,6 @@
 [project]
 name = "sqlctx"
-version = "0.1.1"
+version = "0.1.7"
 description = "A tool for generating LLM context from database tables"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,6 +14,7 @@ dependencies = [
     "uvicorn",
     "toml>=0.10.2",
     "click>=8.1.8",
+    "ruamel-yaml>=0.18.6",
 ]
 
 [project.scripts]

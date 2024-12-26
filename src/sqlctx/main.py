@@ -1,5 +1,5 @@
 import click
-from cli_commands import cli
+from sqlctx.cli_commands import cli
 
 if __name__ == "__main__":
     cli()

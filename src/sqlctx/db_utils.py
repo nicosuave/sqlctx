@@ -363,8 +363,9 @@ def process_database(connection=None, clean=False, debug=False):
 
     handler.close()
 
-def add_connection(connection_string=None):
-    connection_name = input('Please enter a connection name: ')
+def add_connection(connection_string=None, connection_name=None):
+    if not connection_name:
+        connection_name = input('Please enter a connection name: (default will be used if none provided')
     if not connection_string:
         connection_string = input(
             'Please enter a connection string (e.g., "mysql://user:pass@host/db", "postgresql://user:pass@host/db", or "duckdb:///path/to/db"): '

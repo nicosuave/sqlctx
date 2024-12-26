@@ -6,7 +6,7 @@ import pandas as pd
 import yaml
 import duckdb
 import os
-from db_utils import connect_to_database, load_config
+from sql_ctx.db_utils import connect_to_database, load_config
 
 # Initialize the FastMCP instance as a global variable
 mcp = FastMCP("Database Explorer")

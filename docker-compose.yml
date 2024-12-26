@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_HOST_AUTH_METHOD: trust  # Allow connections without password for testing
+    ports:
+      - "5432:5432"
+    networks:
+      - test_network
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: test_password
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_HOST: '%'  # Allow root connections from any host
+    ports:
+      - "3306:3306"
+    networks:
+      - test_network
+
+networks:
+  test_network:
+    driver: bridge

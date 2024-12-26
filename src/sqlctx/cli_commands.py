@@ -2,7 +2,7 @@ import click
 import os
 import shutil
 import toml
-from db_utils import process_database, add_connection
+from sqlctx.db_utils import process_database, add_connection
 
 __version__ = "0.1.7"
 
@@ -20,9 +20,10 @@ def generate(clean, connection, debug):
 
 @cli.command()
 @click.option('--connection-string', default=None, help='Database connection string')
-def add(connection_string):
+@click.option('--name', default=None, help='Name of the connection')
+def add(connection_string, name):
     """Add a new database connection."""
-    add_connection(connection_string)
+    add_connection(connection_string, name)
 
 @cli.command()
 def version():

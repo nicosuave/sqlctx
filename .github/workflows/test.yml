@@ -29,5 +29,8 @@ jobs:
       - name: Run UV sync
         run: uv sync
 
+      - name: Install package in editable mode
+        run: uv pip install -e .
+
       - name: Run tests
         run: uv run pytest
